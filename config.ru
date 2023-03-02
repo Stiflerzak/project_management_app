@@ -1,8 +1,7 @@
 require 'sinatra'
-require 'sinatra/activerecord'
+require_relative "./config/environment"
 
-# Load the database configuration from YAML file
-db_config = YAML.load(File.read('config/database.yml'))
-ActiveRecord::Base.establish_connection(db_config['development'])
+# Parse JSON from the request body into the params hash
+use Rack::JSONBodyParser
 
-# Define your routes and models here
+run ApplicationController 
