@@ -4,4 +4,5 @@ require 'bundler/setup'
 Bundler.require(:default, ENV["RACK_ENV"])
 
 
-require_relative "../app/models/project"
+# Require in all files in 'app' directory
+require_all 'app'
