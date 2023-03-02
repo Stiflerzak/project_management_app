@@ -7,3 +7,12 @@ class MyApp < Sinatra::Base
 end
 
 run MyApp
+
+
+require './models/project'
+require 'active_record'
+
+ActiveRecord::Base.establish_connection(
+  YAML.load_file('./config/database.yml')[ENV['RACK_ENV']]
+)
+
