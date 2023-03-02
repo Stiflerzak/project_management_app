@@ -9,7 +9,7 @@ end
 run MyApp
 
 
-require './models/project'
+require './app/models/project'
 require 'active_record'
 
 ActiveRecord::Base.establish_connection(
