@@ -1,4 +1,3 @@
-require 'active_record'
-
 class Project < ActiveRecord::Base
+ belongs_to :category
 end
