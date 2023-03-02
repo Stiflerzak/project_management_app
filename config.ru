@@ -1,18 +1,8 @@
-require 'sinatra/base'
+require 'sinatra'
+require 'sinatra/activerecord'
 
-class MyApp < Sinatra::Base
-  get '/' do
-    'Hello world!'
-  end
-end
+# Load the database configuration from YAML file
+db_config = YAML.load(File.read('config/database.yml'))
+ActiveRecord::Base.establish_connection(db_config['development'])
 
-run MyApp
-
-
-require './app/models/project'
-require 'active_record'
-
-ActiveRecord::Base.establish_connection(
-  YAML.load_file('./config/database.yml')[ENV['RACK_ENV']]
-)
-
+# Define your routes and models here
