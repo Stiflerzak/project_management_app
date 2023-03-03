@@ -37,6 +37,19 @@ post '/project' do
     project.to_json
 end
 
+#project patch end point
+
+patch '/project/:id' do 
+ project= Project.find(params[:id])
+ project.update(
+    title: params[:title],
+    description: params[:description],
+    category_id: params[:category_id],
+    status: params[:status],
+ )
+end
+
+
 
 end
 
