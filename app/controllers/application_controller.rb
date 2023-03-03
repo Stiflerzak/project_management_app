@@ -50,6 +50,13 @@ patch '/project/:id' do
  {message: "Project has been updated"}.to_json
 end
 
+#delete
+delete '/project/:id' do 
+   project= Project.find(params[:id])
+   project.destroy
+   {message: "Project was deleted succesfully"}.to_json
+end
+
 
 
 end
