@@ -22,6 +22,21 @@ get '/projects' do
     Project.all.to_json
 end
 
+get '/project/:id' do 
+    Project.find(params[:id]).to_json
+end
+
+post '/project' do 
+   project= Project.create(
+        title: params[:title],
+        description: params[:description],
+        category_id: params[:category_id],
+        status: false,
+    )
+    project.to_json
+end
+
+
 end
 
 
