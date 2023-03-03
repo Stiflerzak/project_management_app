@@ -47,6 +47,7 @@ patch '/project/:id' do
     category_id: params[:category_id],
     status: params[:status],
  )
+ {message: "Project has been updated"}.to_json
 end
 
 
