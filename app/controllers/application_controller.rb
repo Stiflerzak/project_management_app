@@ -38,7 +38,6 @@ post '/project' do
 end
 
 #project patch end point
-
 patch '/project/:id' do 
  project= Project.find(params[:id])
  project.update(
@@ -50,14 +49,12 @@ patch '/project/:id' do
  {message: "Project has been updated"}.to_json
 end
 
-#delete
+#delete from projects endpoint
 delete '/project/:id' do 
    project= Project.find(params[:id])
    project.destroy
-   {message: "Project was deleted succesfully"}.to_json
+   {message: "Project was deleted succesfully('#{project.title}')"}.to_json
 end
-
-
 
 end
 
