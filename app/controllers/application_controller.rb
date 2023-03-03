@@ -17,15 +17,16 @@ get '/category/:id' do
     Category.find(params[:id]).to_json
 end
 
-#endpoint for all projects
+#endpoint for fetching all projects
 get '/projects' do
     Project.all.to_json
 end
-
+#endpoint that finds a project by id
 get '/project/:id' do 
     Project.find(params[:id]).to_json
 end
 
+#endpoint for adding a project
 post '/project' do 
    project= Project.create(
         title: params[:title],
