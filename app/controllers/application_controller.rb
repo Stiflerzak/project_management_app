@@ -8,13 +8,18 @@ class ApplicationController < Sinatra::Base
         {hello: "Just a starting code 😃"}.to_json
     end
 
-
+#endpoint for all category
 get '/categories' do
     Category.all.to_json
 end
-
+#endpoint for agiven category sorted by id
 get '/category/:id' do 
     Category.find(params[:id]).to_json
+end
+
+#endpoint for all projects
+get '/projects' do
+    Project.all.to_json
 end
 
 end

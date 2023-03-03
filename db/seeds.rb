@@ -1,11 +1,12 @@
 puts "🌱 Seeding data..."
 
-# place your seeds here
+# This creates categories data
 
 Category.create(name: "Freelance")
 Category.create(name: "Proffesional")
 Category.create(name: "Lowcome")
 
+# This creates projects data that is linked to a category
 Category.all.each do |category|
     6.times do 
         Project.create(
