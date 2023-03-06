@@ -70,7 +70,7 @@ The following endpoints are ready for use:
 8. `/project/:id` -  project delete end point
 
 ## LICENSE
-This repository is distributed under the MIT License
+This repository is distributed under  GNU GENERAL PUBLIC LICENSE
 
 ```markdown
 Copyright 2023 Hilary Kariuki
